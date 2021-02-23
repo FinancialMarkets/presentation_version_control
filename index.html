@@ -98,9 +98,81 @@
 
 	<section>
 	  <h3>Workflow and Important Commands</h3>
-	  
-	  
+	  <p align='left'>In the next few slides will cover some important commands to get you started using git for version control.  What follows provides the git commands you would execute in a shell.  If you are using an IDE (which is recommended) you only need to look for the button for the command.</p>
 	</section>
+
+	<section>
+	  <h3>Starting a Git Repo</h3>
+	  <p align='left'>To start version control in a directory you 'initialize' the git repository with:</p>
+<pre><code data-trim data-noescape>
+$ git init
+</code></pre>
+	  <p align='left'>This will create a <a href="https://en.wikipedia.org/wiki/Hidden_directory">hidden directory</a> named .git</p>
+	</section>
+
+	<section>
+	  <h3>Tracking Files</h3>
+	  <p align='left'>Initially, no files are under version control---Git is not watching them for changes.  To track them we need to add them with (say we want to track a file named example.py):</p>
+	<pre><code data-trim data-noescape>
+$ git add example.py
+	</code></pre>
+	</section>
+
+	<section>
+	  <h3>Committing</h3>
+	  <p align='left'>We then commit the changes, which is like setting a market in the life of the file.</p>
+	<pre><code data-trim data-noescape>
+$ git commit -m "initial commit"
+	</code></pre>
+	  <p align='left'>The "initial commit" is the commit message. You can put in whatever description of the commit you think is most appropriate.</p>
+	</section>
+
+	<section>
+	  <h3>Git Status</h3>
+	  <p align='left'>The git status command will tell you the present state of the repository, which includes information such as any files with unstaged or staged changes.  It will also indicate the latest commit (known as Head).</p>
+	  <pre><code data-trim data-noescape>
+	      $ git status
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h3>git diff</h3>
+	  <p align='left'>Say <code>example.py</code> has unstaged changes.  We can take a look at the changes with:</p>
+	  <pre><code data-trim data-noescape>
+	      $ git diff example.py
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <h3>Staging Changes</h3>
+	  <p align='left'>If we want to commit the changes we first stage the file with <code>git add</code> and then commit with <code>git commit</code>.  Note there is no <code>git stage</code> command.  We use <code>git add</code> for both initially tracking a file and later staging changes.</p>
+<pre><code data-trim data-noescape>
+    $ git add example.py
+    $ git commit -m "a description of the changes"
+</code></pre>	  
+	</section>
+
+	<section>
+	  <p align='left'>In this way you will have a history of every change made to a file or set of files.  You can also, at any time, see who wrote each line in a file by using:</p>
+	  <pre><code data-trim data-noescape>
+	      $ git blame example.py
+	    </code>
+	  </pre>
+	</section>
+
+	<section>
+	  <p align='left'>There is also a great deal of other things you can do, like undoing changes and branching, however the above is enough to get you started, with the exception of learning how to host your code online.  We'll cover this next.</p>
+	</section>
+
+
+	<section>
+	  <h3>Remote Repositories</h3>
+	  <p align='left'>The next <span class="fragment highlight-green">important topic to cover is pushing your repo to a remote location</span>, and how this fosters collaboration on your code with others.  This is where GitHub comes in.</p>
+	  <p align='left'>There is some set-up to do here, and a number of new terms to learn like <code>git push</code> and <code>git fetch</code>, so we'll cover this in a separate presentation.</p>
+	</section>
+
 
 </div>
 </div>
